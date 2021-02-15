@@ -120,7 +120,7 @@ class Invitations extends Component {
 
                 <View>
                     <Animated.View style={{ maxHeight: this.state.animHeight }}>
-                        <ScrollView horizontal >
+                        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             <View style={[globalStyles.row, globalStyles.secondary_H_alignment]}>
                                 {row}
                             </View>

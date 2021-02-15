@@ -52,7 +52,7 @@ class Suggestion extends Component {
                 </View>
                 <View style={{flexDirection:'row'}}>
                     <Image style={styles.img} source={require('./../assets/YouMayKnow_IMG.png')} />
-                    <ScrollView nestedScrollEnabled horizontal style={{ width:variables.width,position:'absolute',paddingLeft:150 }}>
+                    <ScrollView nestedScrollEnabled horizontal showsHorizontalScrollIndicator={false} style={{ width:variables.width,position:'absolute',paddingLeft:150 }}>
 
 
                         {/* <View style={{ flexDirection: 'row',marginLeft:200 }}> */}
