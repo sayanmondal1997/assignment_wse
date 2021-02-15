@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView, Image, TouchableOpacity,StyleSheet } from 'react-native'
+import { Text, View, ScrollView, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import { globalStyles, variables } from "../globalStyles"
 import PeopleCard from './PeopleCard'
 
- class Suggestion extends Component {
+class Suggestion extends Component {
 
     constructor(props) {
         super(props);
@@ -50,13 +50,21 @@ import PeopleCard from './PeopleCard'
                     </View>
 
                 </View>
-
-                <ScrollView nestedScrollEnabled horizontal>
-
+                <View style={{flexDirection:'row'}}>
                     <Image style={styles.img} source={require('./../assets/YouMayKnow_IMG.png')} />
+                    <ScrollView nestedScrollEnabled horizontal style={{ width:variables.width,position:'absolute',paddingLeft:150 }}>
 
-                    {this.state.data.filter((e,i) => i <= 5).map((e, i) => <PeopleCard key={i} data={e} />)}
-                </ScrollView>
+
+                        {/* <View style={{ flexDirection: 'row',marginLeft:200 }}> */}
+                        {this.state.data.filter((e, i) => i <= 5).map((e, i) => <PeopleCard key={i} data={e} />)}
+                        {/*</View> </View> */}
+
+
+                    </ScrollView>
+                </View>
+
+
+
 
             </View>
         )
@@ -70,46 +78,46 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#1D525E"
     },
-   
+
     header: {
         paddingVertical: 20,
-        flexDirection: "row", 
+        flexDirection: "row",
     },
-   
+
     headingBlock: {
-       flex:1
+        flex: 1
     },
-   
+
     heading: {
         color: variables.primaryTxt,
         fontSize: 14
     },
-   
+
     description: {
         color: variables.secondaryTxt,
         fontSize: 12
     },
-   
+
     img: {
         width: 170,
         height: 153,
-        resizeMode:"contain"
+        resizeMode: "contain",
     },
-   
+
     btnBlock: {
-       justifyContent: "flex-end",
-       
+        justifyContent: "flex-end",
+
     },
-   
+
     btn: {
-       backgroundColor: "#1D525E",
-       elevation: 26,
-       padding: 8,
-       borderRadius: 50
+        backgroundColor: "#1D525E",
+        elevation: 26,
+        padding: 8,
+        borderRadius: 50
     },
-   
+
     btnTxt: {
         color: variables.primaryTxt
     }
-   
-   })
+
+})
